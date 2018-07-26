@@ -1,0 +1,7 @@
+export const Constants = {
+    ADD_TODO:'ADD:TODO',
+    CHANGE_STATUS: 'CHANGE:TODO_STATUS',
+    CHANGE_IS_PIN: 'CHANGE:TODO_PIN',
+    DELETE_TODO:'DELETE:TODO'
+
+}

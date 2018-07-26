@@ -1,0 +1,134 @@
+:global(.form-fields) {
+    margin-bottom: 10px;
+    border: 1px solid #33373d;
+    border-radius: 4px;
+    width: 100%;
+    background: #353a40;
+    position: relative;
+    box-sizing: border-box;
+    padding: 5px;
+    font-family: "Courier New", Courier, monospace;
+}
+
+:global(label.label-class) {
+    padding-bottom: 8px;
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    font-size: 12px;
+}
+
+:global(input[type="text"]) {
+    border-width: 0;
+    height: 40px;
+    width: 100%;
+    font-size: 20px;
+    background: #353a40;
+}
+
+input[type="text"]:focus, input[type="text"]:hover {
+    outline: 0;
+}
+
+input[type=checkbox] + label {
+    display: block;
+    margin: 0.2em;
+    cursor: pointer;
+    padding: 0.2em;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 1px;
+}
+
+:global(input[type="checkbox"] + label.done) {
+    text-decoration: line-through;
+}
+
+input[type=checkbox] {
+    display: none;
+}
+
+input[type=checkbox] + label:before {
+    content: "\2714";
+    border: 0.1em solid #000;
+    border-radius: 0.2em;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    padding-left: 0.2em;
+    padding-bottom: 0.3em;
+    margin-right: 0.2em;
+    vertical-align: bottom;
+    color: transparent;
+    transition: .2s;
+    margin-right: 10px;
+}
+
+input[type=checkbox] + label:active:before {
+    transform: scale(0);
+}
+
+input[type=checkbox]:checked + label:before {
+    background-color: MediumSeaGreen;
+    border-color: MediumSeaGreen;
+    color: #fff;
+}
+
+input[type=checkbox]:disabled + label:before {
+    transform: scale(1);
+    border-color: #aaa;
+}
+
+input[type=checkbox]:checked:disabled + label:before {
+    transform: scale(1);
+    background-color: #bfb;
+    border-color: #bfb;
+}
+
+:global(.dot-link:after){
+    font-size: 20px;
+    content: '...';
+    width: 40px;
+    height: 20px;
+    letter-spacing: 2px;
+    font-weight: bolder;
+}
+:global(.dot-link){
+    color:#000;
+    text-decoration-line: none;
+}
+
+:global(.popup){
+    position: absolute;
+    min-width: 200px;
+    min-height: 50px;
+    background: #000;
+    right: -20px;
+    top: 30px;
+    padding:5px 10px 5px 10px;
+    border-radius: 5px;
+    display: none;
+    z-index: 10;
+}
+:global(.popup.active){
+    display: block;
+}
+:global(.popup::before){
+    content: " ";
+	border-left: 10px solid transparent;  /* left arrow slant */
+	border-right: 10px solid transparent; /* right arrow slant */
+	border-bottom: 10px solid #000; /* bottom, add background color here */
+    top: -10px;
+    right: 25px;
+    position: absolute;
+}
+:global(.popup .action){
+    padding: 10px;
+    border-bottom: 1px solid #33373d;
+    display:block;
+    color: #FFF;
+    text-decoration: none;
+}
+:global(.popup .action:last-child){
+    border-bottom: 0px;
+}
