@@ -8,7 +8,6 @@ Demo [here]
 
 ## Folder Structure
 
-
 ```
 my-app/
   README.md
