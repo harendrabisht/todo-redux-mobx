@@ -1,0 +1,15 @@
+:root{
+    --border-color:#33373d;
+    --backgroud: #4e4e4e;
+    --color-1:rgba(255,255,255,0.7);
+    --color-hover-1:rgba(255,255,255,1);
+    --color-2: #000;
+    --google:#db4437;
+    --facebook:#4267b2;
+    --github: #000;
+    --header-bg-1: #ef6c00;
+    --header-bg-2: #fb8c00;
+    --header-link: #924b10;
+    --form-color:#ff8904;
+    --list-item:rgba(255, 137, 5, 1)
+}

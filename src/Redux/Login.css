@@ -1,0 +1,34 @@
+:global(.facebook), :global(.google),:global(.github){
+    text-align: center;
+    min-width: 200px;
+    color: var(--color-1);
+}
+
+:global(.facebook){
+    background: var(--facebook);
+    border: 1px solid var(--facebook);
+}
+:global(.google){
+    background: var(--google);
+    border: 1px solid var(--google);
+}
+:global(.github){
+    background: var(--github);
+    border: 1px solid var(--github);
+}
+
+.loginContainer{
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.login{
+    display: flex;
+    width:100%;
+    justify-content: center;
+}
+.loginHeader{
+    color: var(--header-bg-1);
+    text-align: center;
+}

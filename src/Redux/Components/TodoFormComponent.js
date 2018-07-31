@@ -16,9 +16,8 @@ export default class TodoFormComponent extends Component {
             todo: {
                 title: '',
                 done: false,
-                id: null,
-                isPin: false,
-                date: new Date()
+                date: null,
+                isPin: false
             }
         }
     }
@@ -27,24 +26,26 @@ export default class TodoFormComponent extends Component {
         let {name, value} = e.target;
         let {todo} = this.state;
         todo[name] = value;
-        todo.id = Date.now();
+        todo.date = Date.now();
         this.setState({todo: todo});
     }
 
     submitTodoForm(e) {
         e.preventDefault();
-        let {todo} = this.state
+        let {todo} = this.state;
+        let{history} = this.props;
+        let {uid} = this.props.user;
+        if(!uid){
+            history.push('/login');
+            return;
+        }
         if(todo.title.length)
             this
                 .props
-                .submitTodo(todo);
+                .submitTodo(uid, todo);
         todo.title = '';
 
         this.setState({todo: todo});
-    }
-
-    componentWillReceiveProps(nextProps) {
-        console.log(nextProps);
     }
 
     render() {

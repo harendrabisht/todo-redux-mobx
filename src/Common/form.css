@@ -1,9 +1,11 @@
+/* @import './../../Variable.css'; */
+
 :global(.form-fields) {
     margin-bottom: 10px;
-    border: 1px solid #33373d;
+    border: 1px solid var(--header-bg-1);
     border-radius: 4px;
     width: 100%;
-    background: #353a40;
+    background: #FFF;
     position: relative;
     box-sizing: border-box;
     padding: 5px;
@@ -23,7 +25,6 @@
     height: 40px;
     width: 100%;
     font-size: 20px;
-    background: #353a40;
 }
 
 input[type="text"]:focus, input[type="text"]:hover {
@@ -131,4 +132,28 @@ input[type=checkbox]:checked:disabled + label:before {
 }
 :global(.popup .action:last-child){
     border-bottom: 0px;
+}
+
+.btn{
+    padding: 10px 15px;
+    color: var(--color-1);
+    font-size: 16px;
+    margin: 10px 20px;
+    display: block;
+    border-radius: 2px;
+}
+
+:global(.loader){
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    left: 50%;
+    margin-left: -50px;
+    display: none;
+}
+:global(.loader.active){
+    display: block;
+}
+:global(.loader .loader-img){
+    width: 100px;
 }

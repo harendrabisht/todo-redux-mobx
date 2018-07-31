@@ -4,6 +4,16 @@ export const CreateTodo = (data)=>({
     data
 });
 
+export const getTodoSuccess = data=>({
+    type: Constants.GET_TODO_SUCCESS,
+    data
+});
+
+export const getTodoError = data=>({
+    type: Constants.GET_TODO_ERROR,
+    data
+});
+
 export const updateTodoStatus = (id, done) =>({
     type: Constants.CHANGE_STATUS,
     data:{
@@ -23,3 +33,8 @@ export const deleteTodo = id =>({
     type: Constants.DELETE_TODO,
     id
 });
+
+export const fetchRequest = data =>({
+    type: Constants.IS_FETCH,
+    data
+})

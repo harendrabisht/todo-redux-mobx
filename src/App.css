@@ -1,5 +1,6 @@
 body, div, input, *{
   box-sizing: border-box;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 .App {
   text-align: center;

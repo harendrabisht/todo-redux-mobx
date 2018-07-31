@@ -20,7 +20,7 @@ export default class Popover extends PureComponent {
     componentDidMount(){
         document.addEventListener('click', (e)=>{
             if(e.target.className !== 'dot-link'){
-                document.getElementsByClassName('popup')[0].classList.remove("active");
+                document.getElementsByClassName('popup')[0] && document.getElementsByClassName('popup')[0].classList.remove("active");
             }
             
         });

@@ -26,7 +26,8 @@ class Input extends PureComponent {
                     id={id}
                     placeholder={placeholder}
                     value={value}
-                    onChange={onChange}/>
+                    onChange={onChange}
+                    autoComplete="off"/>
             </div>
         )
     }

@@ -19,28 +19,40 @@ export default class TodoListComponent extends PureComponent {
     }
 
     onChangeToDo(e) {
-        let {name, checked} = e.target;
-        let id = Number(name.split('-')[1]);
+        let {checked, id} = e.target;
+        let {todos, user} = this.props;
+        let todo = todos.filter(todos => {
+            if (todos.id === id) 
+                return true;
+            }
+        )[0];
+        todo.done = checked;
         this
             .props
-            .updateTodo(id, checked);
+            .updateTodo(user.uid, todo);
 
     }
 
     deleteItem(e) {
         let {id} = e.target.dataset;
-        id = Number(id);
+        let {user} = this.props;
         this
             .props
-            .deleteTodo(id)
+            .deleteTodo(user.uid, id)
     }
 
     pinToTop(e, bool) {
         let {id} = e.target.dataset;
-        id = Number(id);
+        let {todos, user} = this.props;
+        let todo = todos.filter(todos => {
+            if (todos.id === id) 
+                return true;
+            }
+        )[0];
+        todo.isPin = bool;
         this
             .props
-            .updateTodoPin(id, bool);
+            .updateTodo(user.uid, todo);
     }
 
     render() {
@@ -105,38 +117,36 @@ const TodoItem = (props) => {
                 : ''}
             <Checkbox
                 label={title}
-                name={`todo-${id}`}
-                id={`todo-${id}`}
+                name={id}
+                id={id}
                 onChange={onChange}
                 className='item-cls'
-                value={`todo-${id}`}
+                value={id}
                 checked={done}
                 labelClass={done
                 ? 'done'
                 : ''}></Checkbox>
             <Popover cls="action-item">
                 {isPin
-                    ? 
-                    <a
+                    ? <a
+                            href="javascript:void(0)"
+                            className="action"
+                            data-id={id}
+                            onClick={(e) => {
+                            pinToTop(e, false)
+                        }}>
+                            <i className="fas fa-thumbtack"></i>
+                            Unpin
+                        </a>
+                    : <a
                         href="javascript:void(0)"
                         className="action"
                         data-id={id}
                         onClick={(e) => {
-                        pinToTop(e, false)
+                        pinToTop(e, true)
                     }}>
                         <i className="fas fa-thumbtack"></i>
-                        Unpin
-                    </a>
-                    : 
-                    <a
-                    href="javascript:void(0)"
-                    className="action"
-                    data-id={id}
-                    onClick={(e) => {
-                    pinToTop(e, true)
-                }}>
-                    <i className="fas fa-thumbtack"></i>
-                    Pin to top</a>}
+                        Pin to top</a>}
 
                 <a
                     href="javascript:void(0)"

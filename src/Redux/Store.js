@@ -1,5 +1,6 @@
-import {createStore} from 'redux';
-import {CreateTodoReducer} from './Reducers/ToDoReducer';
-
-const TodoStore = createStore(CreateTodoReducer);
-export default TodoStore;
+import {createStore, applyMiddleware} from 'redux';
+import thunkMiddleware from 'redux-thunk';
+import reducers from './Reducer';
+const middleWare = applyMiddleware(thunkMiddleware)(createStore);
+const store = middleWare(reducers);
+export default store;
