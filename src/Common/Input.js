@@ -38,7 +38,6 @@ Input.propTypes = {
     required: PropTypes.bool,
     type: PropTypes.string,
     wrapperProps: PropTypes.object,
-    onClick: PropTypes.func,
     onChange: PropTypes.func,
     value: PropTypes.string,
     placeholder: PropTypes.string
@@ -48,9 +47,6 @@ Input.defaultProps = {
     name: null,
     id: null,
     value: '',
-    placeholder: null,
-    onClick: () => {
-        return null
-    }
+    placeholder: null
 }
 export default Input;
